@@ -11,8 +11,8 @@ const Text = () => {
 
     return (
         <div>
- <Button className="bg-red-600" variant="default"
-              onClick={() => handleClick(false) } >Hello Ariyan </Button>
+ <Button className="bg-black" variant="default"
+              onClick={() => handleClick(false) } >Hello Cnergy </Button>
         </div>
     );
 };
