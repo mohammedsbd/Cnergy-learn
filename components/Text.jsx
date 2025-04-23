@@ -12,7 +12,7 @@ const Text = () => {
     return (
         <div>
  <Button className="bg-black" variant="default"
-              onClick={() => handleClick(false) } >Hello Cnergy </Button>
+              onClick={() => handleClick(true) } >Hello Cnergy </Button>
         </div>
     );
 };
