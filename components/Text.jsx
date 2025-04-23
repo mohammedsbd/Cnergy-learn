@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from './ui/button';
 import { toast } from 'sonner';
 
+// to create alert pop up
 const Text = () => {
 
     const handleClick = (mode) => {
