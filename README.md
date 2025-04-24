@@ -53,3 +53,27 @@ const handler = NextAuth({
 
 export { handler as GET, handler as POST };
 
+
+
+
+
+
+import CredentialsProvider from "next-auth/providers/credentials";
+
+CredentialsProvider({
+  name: "Credentials",
+  credentials: {
+    username: { label: "Username", type: "text" },
+    password: { label: "Password", type: "password" }
+  },
+  async authorize(credentials, req) {
+    const user = { id: "1", name: "Aaron", email: "aaron@example.com" };
+    // Verify username/password here
+    if (credentials?.username === "aaron" && credentials.password === "1234") {
+      return user;
+    }
+    return null;
+  }
+})
+
+
