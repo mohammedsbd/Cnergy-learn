@@ -1,66 +1,77 @@
-import mongoose, { schema } from "mongoose";
-import { boolean, Schema, string } from "zod";
+import mongoose from "mongoose";
 
 const courseSchema = new mongoose.Schema({
   title: {
-    required: true,
     type: String,
+    required: true,
   },
   subtitle: {
-    required: true,
     type: String,
+    required: true,
   },
   description: {
-    required: true,
     type: String,
+    required: true,
   },
   thumbnail: {
-    required: true,
     type: String,
+    required: true,
   },
   modules: {
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    type: Schema.ObjectId,
+    ref: "Module", // optional: if you have a Module model
   },
   price: {
-    required: true,
     type: Number,
+    required: true,
   },
   active: {
-    required: true,
     type: Boolean,
+    required: true,
+    default: true,
   },
   category: {
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    type: Schema.ObjectId,
+    ref: "Category", // optional
   },
   instructor: {
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    type: Schema.ObjectId,
+    ref: "Instructor", // optional
   },
-
   testimonials: {
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    type: Schema.ObjectId,
+    ref: "Testimonial", // optional
   },
-
   quizSet: {
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    type: Schema.ObjectId,
+    ref: "QuizSet", // optional
   },
-
   learning: {
-    required: true,
     type: [String],
+    required: true,
   },
   createdOn: {
-    required: true,
     type: Date,
+    required: true,
+    default: Date.now,
   },
   modifiedOn: {
-    required: true,
     type: Date,
+    required: true,
+    default: Date.now,
   },
 });
 
-export const Course = mongoose.models.Course ?? mongoose.model("Course", courseSchema);
+// // Optional: Middleware to update `modifiedOn` on save
+// courseSchema.pre("save", function (next) {
+//   this.modifiedOn = new Date();
+//   next();
+// });
+
+export const Course =
+  mongoose.models.Course ?? mongoose.model("Course", courseSchema);
