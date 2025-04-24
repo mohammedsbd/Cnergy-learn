@@ -1,77 +1,63 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const courseSchema = new mongoose.Schema({
+const courseSchema = new Schema({
   title: {
-    type: String,
     required: true,
+    type: String,
   },
   subtitle: {
-    type: String,
     required: true,
+    type: String,
   },
   description: {
-    type: String,
     required: true,
+    type: String,
   },
   thumbnail: {
-    type: String,
     required: true,
+    type: String,
   },
   modules: {
-    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "Module", // optional: if you have a Module model
+    type: [Schema.Types.ObjectId],
   },
   price: {
-    type: Number,
     required: true,
+    type: Number,
   },
   active: {
-    type: Boolean,
     required: true,
-    default: true,
+    type: Boolean,
   },
   category: {
-    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "Category", // optional
+    type: Schema.Types.ObjectId,
   },
   instructor: {
-    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "Instructor", // optional
+    type: Schema.Types.ObjectId,
   },
   testimonials: {
-    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "Testimonial", // optional
+    type: [Schema.Types.ObjectId],
   },
   quizSet: {
-    type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "QuizSet", // optional
+    type: Schema.Types.ObjectId,
   },
   learning: {
-    type: [String],
     required: true,
+    type: [String],
   },
   createdOn: {
-    type: Date,
     required: true,
-    default: Date.now,
+    type: Date,
   },
   modifiedOn: {
-    type: Date,
     required: true,
-    default: Date.now,
+    type: Date,
   },
 });
-
-// // Optional: Middleware to update `modifiedOn` on save
-// courseSchema.pre("save", function (next) {
-//   this.modifiedOn = new Date();
-//   next();
-// });
 
 export const Course =
   mongoose.models.Course ?? mongoose.model("Course", courseSchema);
