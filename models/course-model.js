@@ -62,3 +62,5 @@ const courseSchema = new mongoose.Schema({
     type: Date,
   },
 });
+
+export const Course = mongoose.models.Course ?? mongoose.model("Course", courseSchema);
