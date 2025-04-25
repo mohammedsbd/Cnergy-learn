@@ -29,9 +29,7 @@ const courseSchema = new Schema({
     required: true,
     type: Boolean,
   },
-  category: {
-    required: true,
-    type: Schema.Types.ObjectId,
+  category: { type: Schema.Types.ObjectId, ref: "Category" },
   },
   instructor: {
     required: true,
