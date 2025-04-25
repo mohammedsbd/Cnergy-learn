@@ -10,7 +10,7 @@ const testimonialSchema = new Schema({
     type: Number,
   },
   
-  courseId: { type: Schema.Types.ObjectId, ref: "Category" },
+  courseId: { type: Schema.Types.ObjectId, ref: "Course" },
   user: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
