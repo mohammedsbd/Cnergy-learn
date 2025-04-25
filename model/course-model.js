@@ -32,10 +32,7 @@ const courseSchema = new Schema({
   category: { type: Schema.Types.ObjectId, ref: "Category" },
   instructor: { type: Schema.Types.ObjectId, ref: "User" },
   
-  testimonials: {
-    required: true,
-    type: [Schema.Types.ObjectId],
-  },
+  testimonials: [{ type: Schema.Types.ObjectId, ref: "Testimonial" }],
   quizSet: {
     required: true,
     type: Schema.Types.ObjectId,

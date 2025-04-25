@@ -1,6 +1,7 @@
 import {Course} from "@/model/course-model"
 import { Category } from "@/model/category-model";
 import { User } from "@/model/user-model";
+import { Testimonial } from "@/model/testimonial-model";
 
 
 
@@ -13,6 +14,10 @@ export async function getCourses() {
     .populate({
       path: "instructor",
       model: User,
+    })
+    .populate({
+      path: "testimonials",
+      model: Testimonial,
     });
     return courses
 }
