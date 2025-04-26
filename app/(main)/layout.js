@@ -2,24 +2,24 @@ import MainNav from "@/components/main-nav";
 import SiteFooter from "@/components/site-footer";
 import React from "react";
 
-// const navLinks = [
-//   {
-//     title: "Features",
-//     href: "/features",
-//   },
-//   {
-//     title: "Pricing",
-//     href: "/pricing",
-//   },
-//   {
-//     title: "Blog",
-//     href: "/blog",
-//   },
-//   {
-//     title: "Documentation",
-//     href: "/documentation",
-//   },
-// ];
+const navLinks = [
+  {
+    title: "Features",
+    href: "/features",
+  },
+  {
+    title: "Pricing",
+    href: "/pricing",
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "Documentation",
+    href: "/documentation",
+  },
+];
 
 const MainLayout = ({ children }) => {
   return (
