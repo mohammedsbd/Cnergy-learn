@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cnergy Learn - Transform Your Learning Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary: #4A90E2;
+            --secondary: #2ECC71;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        body {
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+        }
+
+        .features {
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            background-color: white;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 3rem 2rem;
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Cnergy Learn</h1>
+            <p>Transform your future with our cutting-edge online learning platform</p>
+            <button class="cta-button">Start Learning Now</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Expert-Led Courses</h3>
+            <p>Learn from industry professionals and gain real-world skills</p>
+        </div>
+        <div class="feature-card">
+            <h3>Interactive Learning</h3>
+            <p>Engage with dynamic content and hands-on projects</p>
+        </div>
+        <div class="feature-card">
+            <h3>Flexible Schedule</h3>
+            <p>Learn at your own pace, anywhere, anytime</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">10,000+</div>
+            <div>Active Learners</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div>Courses Available</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div>Success Rate</div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate numbers on scroll
+        const stats = document.querySelectorAll('.stat-number');
+        const animateNumbers = () => {
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 100;
+                const updateCount = () => {
+                    if(current < target) {
+                        current += increment;
+                        stat.textContent = Math.ceil(current) + (stat.textContent.includes('+') ? '+' : '%');
+                        requestAnimationFrame(updateCount);
+                    }
+                }
+                updateCount();
+            });
+        }
+
+        // Trigger animation when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.stats'));
+    </script>
+</body>
+</html>
