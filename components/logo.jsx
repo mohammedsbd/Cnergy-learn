@@ -31,7 +31,7 @@ import { cn } from "@/lib/utils";
 const Logo = ({ className = "" }) => {
   return (
     <div>
-      <Image className={cn("max-w-[50px]", className)} src={logo} alt="logo" />
+      <Image className={cn("max-w-[40px]", className)} src={logo} alt="logo" />
     </div>
   );
 };
