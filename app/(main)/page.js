@@ -4,100 +4,64 @@ import Support from "@/components/support";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { formatPrice } from "@/lib/formatPrice";
 import { cn } from "@/lib/utils";
+import { getCourseList } from "@/queries/courses";
 import { BookOpen } from "lucide-react";
 import { ArrowRightIcon } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import CourseCard from "./courses/_components/CourseCard";
+import { getCategories } from "@/queries/categories";
 
-const categories = [
-  {
-    id: 1,
-    title: "Design",
-    thumbnail: "/assets/images/categories/design.jpg",
-  },
+// const categories = [
+//   {
+//     id: 1,
+//     title: "Design",
+//     thumbnail: "/assets/images/categories/design.jpg",
+//   },
 
-  {
-    id: 3,
-    title: "Development",
-    thumbnail: "/assets/images/categories/development.jpg",
-  },
-  {
-    id: 4,
-    title: "Marketing",
-    thumbnail: "/assets/images/categories/marketing.jpg",
-  },
-  {
-    id: 5,
-    title: "IT & Software",
-    thumbnail: "/assets/images/categories/it_software.jpg",
-  },
-  {
-    id: 6,
-    title: "Personal Development",
-    thumbnail: "/assets/images/categories/personal_development.jpg",
-  },
-  {
-    id: 7,
-    title: "Business",
-    thumbnail: "/assets/images/categories/programming.jpg",
-  },
-  {
-    id: 8,
-    title: "Photography",
-    thumbnail: "/assets/images/categories/photography.jpg",
-  },
-  {
-    id: 9,
-    title: "Music",
-    thumbnail: "/assets/images/categories/music.jpg",
-  },
-];
+//   {
+//     id: 3,
+//     title: "Development",
+//     thumbnail: "/assets/images/categories/development.jpg",
+//   },
+//   {
+//     id: 4,
+//     title: "Marketing",
+//     thumbnail: "/assets/images/categories/marketing.jpg",
+//   },
+//   {
+//     id: 5,
+//     title: "IT & Software",
+//     thumbnail: "/assets/images/categories/it_software.jpg",
+//   },
+//   {
+//     id: 6,
+//     title: "Personal Development",
+//     thumbnail: "/assets/images/categories/personal_development.jpg",
+//   },
+//   {
+//     id: 7,
+//     title: "Business",
+//     thumbnail: "/assets/images/categories/programming.jpg",
+//   },
+//   {
+//     id: 8,
+//     title: "Photography",
+//     thumbnail: "/assets/images/categories/photography.jpg",
+//   },
+//   {
+//     id: 9,
+//     title: "Music",
+//     thumbnail: "/assets/images/categories/music.jpg",
+//   },
+// ];
 
-const courses = [
-  {
-    id: 1,
-    title: "Design",
-    thumbnail: "/assets/images/categories/design.jpg",
-  },
+const HomePage = async () => {
+  const courses = await getCourseList();
+  const categories = await getCategories();
+  // console.log(cat);
 
-  {
-    id: 3,
-    title: "Development",
-    thumbnail: "/assets/images/categories/development.jpg",
-  },
-  {
-    id: 4,
-    title: "Marketing",
-    thumbnail: "/assets/images/categories/marketing.jpg",
-  },
-  {
-    id: 5,
-    title: "IT & Software",
-    thumbnail: "/assets/images/categories/it_software.jpg",
-  },
-  {
-    id: 6,
-    title: "Personal Development",
-    thumbnail: "/assets/images/categories/personal_development.jpg",
-  },
-  {
-    id: 7,
-    title: "Business",
-    thumbnail: "/assets/images/categories/business.jpg",
-  },
-  {
-    id: 8,
-    title: "Photography",
-    thumbnail: "/assets/images/categories/photography.jpg",
-  },
-  {
-    id: 9,
-    title: "Music",
-    thumbnail: "/assets/images/categories/music.jpg",
-  },
-];
-const HomePage = () => {
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32 grainy">
@@ -118,7 +82,7 @@ const HomePage = () => {
             Hey, Welcome
           </span>
           <h1 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-            Learn By Doing with <br /> Cnergy Learn
+            Learn By Doing with <br /> Easy Learning
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             “You don’t understand anything until you learn it more than one
@@ -138,10 +102,7 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
-<Element/>
-
+      <Element />
 
       {/* Categories Section */}
       <section
@@ -162,13 +123,13 @@ const HomePage = () => {
           {categories.map((category) => {
             return (
               <Link
-                href=""
+                href={`/categories/${category.id}`}
                 key={category.id}
                 className="relative overflow-hidden rounded-lg border bg-background p-2 hover:scale-105 transition-all duration-500 ease-in-out"
               >
                 <div className="flex  flex-col gap-4 items-center justify-between rounded-md p-6">
                   <Image
-                    src={category.thumbnail}
+                    src={`/assets/images/categories/${category.thumbnail}`}
                     alt={category.title}
                     width={100}
                     height={100}
@@ -186,67 +147,20 @@ const HomePage = () => {
         <div className="flex items-center justify-between">
           <SectionTitle>Courses</SectionTitle>
           <Link
-            href={""}
+            href={"/courses"}
             className=" text-sm font-medium  hover:opacity-80 flex items-center gap-1"
           >
             Browse All <ArrowRightIcon className="h-4 w-4" />
           </Link>
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
-          {courses.map((category) => {
-            return (
-              <Link key={category.id} href={`/courses/${category.id}`}>
-                <div className="group hover:shadow-sm transition overflow-hidden border rounded-lg p-3 h-full">
-                  <div className="relative w-full aspect-video rounded-md overflow-hidden">
-                    <Image
-                      src="/assets/images/courses/course_1.png"
-                      alt={"course"}
-                      className="object-cover"
-                      fill
-                    />
-                  </div>
-                  <div className="flex flex-col pt-2">
-                    <div className="text-lg md:text-base font-medium group-hover:text-sky-700 line-clamp-2">
-                      Reactive Accelerator
-                    </div>
-                    <p className="text-xs text-muted-foreground">Development</p>
-                    <div className="my-3 flex items-center gap-x-2 text-sm md:text-xs">
-                      <div className="flex items-center gap-x-1 text-slate-500">
-                        <div>
-                          <BookOpen className="w-4" />
-                        </div>
-                        <span>4 Chapters</span>
-                      </div>
-                    </div>
-
-                    {/* <CourseProgress
-                      size="sm"
-                      value={80}
-                      variant={110 === 100 ? "success" : ""}
-                    /> */}
-
-                    <div className="flex items-center justify-between mt-4">
-                      <p className="text-md md:text-sm font-medium text-slate-700">
-                        {formatPrice(49)}
-                      </p>
-
-                      <Button
-                        variant="ghost"
-                        className="text-xs text-sky-700 h-7 gap-1"
-                      >
-                        Enroll
-                        <ArrowRight className="w-3" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
+          {courses.map((course) => {
+            return <CourseCard key={course.id} course={course} />;
           })}
         </div>
       </section>
 
- <Support/>
+      <Support />
     </>
   );
 };
