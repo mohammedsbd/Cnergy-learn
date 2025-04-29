@@ -8,11 +8,5 @@ export async function dbConnect(){
         console.log(error)
     }
 }
-export async function dbConnect(){
-    try {
-        const conn = await mongoose.connect(String(process.env.MONGODB_CONNECTION_STRING));
-        return conn;
-    } catch (error) {
-        console.log(error)
-    }
-}
+
+
