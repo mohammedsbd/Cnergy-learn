@@ -29,3 +29,21 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 }
 
 export default MyApp;
+
+
+// Example in pages/protected.tsx
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "./api/auth/[...nextauth]";
+
+export async function getServerSideProps(context) {
+  const session = await getServerSession(context.req, context.res, authOptions);
+  if (!session) {
+    return {
+      redirect: { destination: "/api/auth/signin", permanent: false },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+}
