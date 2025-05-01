@@ -60,7 +60,7 @@ const categories = [
 const HomePage = async () => {
   const courses = await getCourseList();
   const categories = await getCategories();
-  // console.log(cat);
+  console.log(categories);
 
   return (
     <>
@@ -82,7 +82,7 @@ const HomePage = async () => {
             Hey, Welcome
           </span>
           <h1 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-            Learn By Doing with <br /> Easy Learning
+            Learn By Doing with <br /> Cnergy Learn
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             “You don’t understand anything until you learn it more than one
