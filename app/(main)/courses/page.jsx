@@ -186,14 +186,7 @@ const CoursesPage = () => {
       {/* <h2 className="text-xl md:text-2xl font-medium">All Courses</h2> */}
       {/* header */}
       <div className="flex items-baseline justify-between  border-gray-200 border-b pb-6 flex-col gap-4 lg:flex-row">
-        <div className="relative h-10 max-lg:w-full">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 z-10 h-4 w-4" />
-          <Input
-            type="text"
-            placeholder="Search courses..."
-            className="pl-8 pr-3 py-2 text-sm" // Add additional styling as needed
-          />
-        </div>
+       
 
         <div className="flex items-center justify-end gap-2 max-lg:w-full">
           <Select>
