@@ -39,7 +39,7 @@ const support = () => {
 
         <div className="flex-1 flex justify-center">
           <Image
-            src="/assets/images/support1.png"
+            src="/assets/images/"
             alt="Support"
             width={500}
             height={400}

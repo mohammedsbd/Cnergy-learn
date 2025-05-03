@@ -13,54 +13,54 @@ import Link from "next/link";
 import CourseCard from "./courses/_components/CourseCard";
 import { getCategories } from "@/queries/categories";
 
-const categories = [
-  {
-    id: 1,
-    title: "Design",
-    thumbnail: "/assets/images/categories/design.jpg",
-  },
+// const categories = [
+//   {
+//     id: 1,
+//     title: "Design",
+//     thumbnail: "/assets/images/categories/design.jpg",
+//   },
 
-  {
-    id: 3,
-    title: "Development",
-    thumbnail: "/assets/images/categories/development.jpg",
-  },
-  {
-    id: 4,
-    title: "Marketing",
-    thumbnail: "/assets/images/categories/marketing.jpg",
-  },
-  {
-    id: 5,
-    title: "IT & Software",
-    thumbnail: "/assets/images/categories/it_software.jpg",
-  },
-  {
-    id: 6,
-    title: "Personal Development",
-    thumbnail: "/assets/images/categories/personal_development.jpg",
-  },
-  {
-    id: 7,
-    title: "Business",
-    thumbnail: "/assets/images/categories/programming.jpg",
-  },
-  {
-    id: 8,
-    title: "Photography",
-    thumbnail: "/assets/images/categories/photography.jpg",
-  },
-  {
-    id: 9,
-    title: "Music",
-    thumbnail: "/assets/images/categories/music.jpg",
-  },
-];
+//   {
+//     id: 3,
+//     title: "Development",
+//     thumbnail: "/assets/images/categories/development.jpg",
+//   },
+//   {
+//     id: 4,
+//     title: "Marketing",
+//     thumbnail: "/assets/images/categories/marketing.jpg",
+//   },
+//   {
+//     id: 5,
+//     title: "IT & Software",
+//     thumbnail: "/assets/images/categories/it_software.jpg",
+//   },
+//   {
+//     id: 6,
+//     title: "Personal Development",
+//     thumbnail: "/assets/images/categories/personal_development.jpg",
+//   },
+//   {
+//     id: 7,
+//     title: "Business",
+//     thumbnail: "/assets/images/categories/programming.jpg",
+//   },
+//   {
+//     id: 8,
+//     title: "Photography",
+//     thumbnail: "/assets/images/categories/photography.jpg",
+//   },
+//   {
+//     id: 9,
+//     title: "Music",
+//     thumbnail: "/assets/images/categories/music.jpg",
+//   },
+// ];
 
 const HomePage = async () => {
   const courses = await getCourseList();
   const categories = await getCategories();
-  console.log(categories);
+  // console.log(cat);
 
   return (
     <>
@@ -82,7 +82,7 @@ const HomePage = async () => {
             Hey, Welcome
           </span>
           <h1 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-            Learn By Doing with <br /> Cnergy Learn
+            Learn By Doing with <br /> Easy Learning
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             “You don’t understand anything until you learn it more than one
