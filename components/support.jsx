@@ -14,10 +14,12 @@ const support = () => {
           </p>
 
           <p className="text-black leading-relaxed mb-8 mt-8">
-            I Am Founder Of Easy Learning Academy And Best Selling Online
-            Instructor Around The World My life’s mission is to help novice and
-            professional software engineers increase their skills, make more
-            money, and ultimately change their lives for the better.
+            We're here to help you succeed. Whether you're looking to improve
+            your skills, advance your career, or explore something new, our
+            platform is designed to empower you with the knowledge and tools you
+            need. Our goal is to provide guidance, resources, and answers that
+            help you gain confidence, reach your goals, and ultimately change
+            your life for the better
           </p>
 
           <div className="flex flex-wrap gap-4">
