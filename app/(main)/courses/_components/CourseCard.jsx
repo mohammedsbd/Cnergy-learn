@@ -17,6 +17,7 @@ const CourseCard = ({ course }) => {
             alt={"course"}
             className="object-cover"
             fill
+            unoptimized
           />
         </div>
         <div className="flex flex-col pt-2">

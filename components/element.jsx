@@ -25,6 +25,7 @@ const element = () => {
             alt="Learning by doing"
             width={500}
             height={400}
+            unoptimized
             className="rounded-lg"
           />
         </div>
@@ -37,6 +38,7 @@ const element = () => {
             alt="Put Your Learning"
             width={500}
             height={400}
+            unoptimized
             className="rounded-lg"
           />
         </div>
