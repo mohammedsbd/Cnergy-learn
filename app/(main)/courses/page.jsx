@@ -1,6 +1,6 @@
 "use client";
 
-import { CourseProgress } from "@/components/course-progress";
+// import { CourseProgress } from "@/components/course-progress";
 import {
   Accordion,
   AccordionContent,
@@ -442,11 +442,11 @@ const CoursesPage = () => {
                         </div>
                       </div>
 
-                      <CourseProgress
+                      {/* <CourseProgress
                         size="sm"
                         value={80}
                         variant={110 === 100 ? "success" : ""}
-                      />
+                      /> */}
 
                       <div className="flex items-center justify-between mt-4">
                         <p className="text-md md:text-sm font-medium text-slate-700">
