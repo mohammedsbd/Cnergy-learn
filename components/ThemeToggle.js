@@ -1,15 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
     const isDark =
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") &&
+      savedTheme === "dark" ||
+      (!savedTheme &&
         window.matchMedia("(prefers-color-scheme: dark)").matches);
+
     setDarkMode(isDark);
     document.documentElement.classList.toggle("dark", isDark);
   }, []);
@@ -22,20 +23,18 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button
-      onClick={toggleTheme}
-      aria-label="Toggle Dark Mode"
-      className="fixed mb-5 ml-4 top-4 right-4 z-50 bg-transparent text-gray-800 dark:text-white p-2 rounded-full transition duration-200 ease-in-out"
-      style={{
-        maxWidth: "60px", // Increased max width
-        maxHeight: "60px", // Increased max height
-        right: "20px", // Adjust the button's right margin
-        top: "20px", // Adjust the button's top margin
-      }}
-    >
-      {darkMode ? <Sun size={24} /> : <Moon size={24} />}{" "}
-      {/* Increased icon size */}
-    </button>
+    <div className="fixed top-4 mt-3 mr-2 right-4 z-50">
+      <label className="relative inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          checked={darkMode}
+          onChange={toggleTheme}
+          className="sr-only peer"
+        />
+        <div className="w-10 h-5 bg-gray-300 rounded-full peer peer-checked:bg-gray-700 transition-colors duration-300" />
+        <div className="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-md peer-checked:translate-x-5 transition-transform duration-300" />
+      </label>
+    </div>
   );
 };
 
