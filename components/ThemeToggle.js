@@ -5,12 +5,15 @@ const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const isDark =
-      savedTheme === "dark" ||
-      (!savedTheme &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    let savedTheme = localStorage.getItem("theme");
 
+    // Default to light mode if no theme is saved
+    if (!savedTheme) {
+      savedTheme = "light";
+      localStorage.setItem("theme", "light");
+    }
+
+    const isDark = savedTheme === "dark";
     setDarkMode(isDark);
     document.documentElement.classList.toggle("dark", isDark);
   }, []);
