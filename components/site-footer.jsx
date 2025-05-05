@@ -8,7 +8,7 @@ const SiteFooter = () => {
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <Logo />
           <p className="text-center text-sm leading-loose md:text-left">
-            Built by @ Cnergy Learning 2025
+            Built by @ Cnergy Learn 2025
           </p>
         </div>
       </div>

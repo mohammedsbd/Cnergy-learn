@@ -25,7 +25,7 @@
 // export default Logo;
 import Image from "next/image";
 import React from "react";
-import logo from "@/assets/cnergy.jpg";
+import logo from "@/assets/cnergy3.png";
 import { cn } from "@/lib/utils";
 
 const Logo = ({ className = "" }) => {

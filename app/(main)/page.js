@@ -12,60 +12,17 @@ import Image from "next/image";
 import Link from "next/link";
 import CourseCard from "./courses/_components/CourseCard";
 import { getCategories } from "@/queries/categories";
-
-// const categories = [
-//   {
-//     id: 1,
-//     title: "Design",
-//     thumbnail: "/assets/images/categories/design.jpg",
-//   },
-
-//   {
-//     id: 3,
-//     title: "Development",
-//     thumbnail: "/assets/images/categories/development.jpg",
-//   },
-//   {
-//     id: 4,
-//     title: "Marketing",
-//     thumbnail: "/assets/images/categories/marketing.jpg",
-//   },
-//   {
-//     id: 5,
-//     title: "IT & Software",
-//     thumbnail: "/assets/images/categories/it_software.jpg",
-//   },
-//   {
-//     id: 6,
-//     title: "Personal Development",
-//     thumbnail: "/assets/images/categories/personal_development.jpg",
-//   },
-//   {
-//     id: 7,
-//     title: "Business",
-//     thumbnail: "/assets/images/categories/programming.jpg",
-//   },
-//   {
-//     id: 8,
-//     title: "Photography",
-//     thumbnail: "/assets/images/categories/photography.jpg",
-//   },
-//   {
-//     id: 9,
-//     title: "Music",
-//     thumbnail: "/assets/images/categories/music.jpg",
-//   },
-// ];
+import ThemeToggle from "@/components/ThemeToggle";
 
 const HomePage = async () => {
   const courses = await getCourseList();
   const categories = await getCategories();
-  // console.log(cat);
 
   return (
     <>
+      <ThemeToggle />
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32 grainy">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center relative isolate">
+        <div className="container flex  max-w-[64rem] flex-col items-center gap-4 text-center relative isolate">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -79,7 +36,7 @@ const HomePage = async () => {
             />
           </div>
           <span className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium border shadow-lg">
-            Welcome to Cnergy Learn  
+            Welcome to Cnergy Learn
           </span>
           <h1 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
             Learn By Doing with <br /> Cnergy Learn
@@ -107,19 +64,19 @@ const HomePage = async () => {
       {/* Categories Section */}
       <section
         id="categories"
-        className="container space-y-6  py-8  md:py-12 lg:py-24"
+        className="container space-y-6 py-8 md:py-12 lg:py-24"
       >
         <div className="flex items-center justify-between">
           <SectionTitle>Categories</SectionTitle>
 
           <Link
             href={""}
-            className=" text-sm font-medium  hover:opacity-80 flex items-center gap-1"
+            className=" text-sm font-medium hover:opacity-80 flex items-center gap-1"
           >
             Browse All <ArrowRightIcon className="h-4 w-4" />
           </Link>
         </div>
-        <div className="mx-auto grid justify-center gap-4 grid-cols-2  md:grid-cols-3 2xl:grid-cols-4">
+        <div className="mx-auto grid justify-center gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
           {categories.map((category) => {
             return (
               <Link
@@ -127,7 +84,7 @@ const HomePage = async () => {
                 key={category.id}
                 className="relative overflow-hidden rounded-lg border bg-background p-2 hover:scale-105 transition-all duration-500 ease-in-out"
               >
-                <div className="flex  flex-col gap-4 items-center justify-between rounded-md p-6">
+                <div className="flex flex-col gap-4 items-center justify-between rounded-md p-6">
                   <Image
                     src={`/assets/images/categories/${category.thumbnail}`}
                     alt={category.title}
@@ -143,13 +100,13 @@ const HomePage = async () => {
         </div>
       </section>
 
-      {/* Courses */}
-      <section id="courses" className="container space-y-6   md:py-12 lg:py-24">
+      {/* Courses Section */}
+      <section id="courses" className="container space-y-6 md:py-12 lg:py-24">
         <div className="flex items-center justify-between">
           <SectionTitle>Courses</SectionTitle>
           <Link
             href={"/courses"}
-            className=" text-sm font-medium  hover:opacity-80 flex items-center gap-1"
+            className=" text-sm font-medium hover:opacity-80 flex items-center gap-1"
           >
             Browse All <ArrowRightIcon className="h-4 w-4" />
           </Link>
@@ -165,4 +122,5 @@ const HomePage = async () => {
     </>
   );
 };
+
 export default HomePage;

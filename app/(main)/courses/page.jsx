@@ -5,15 +5,18 @@ import ActiveFilters from "./_components/ActiveFilters";
 import FilterCourse from "./_components/FilterCourse";
 import { getCourseList } from "@/queries/courses";
 import CourseCard from "./_components/CourseCard";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const CoursesPage = async () => {
   const courses = await getCourseList();
 
   return (
+    
     <section
       id="courses"
       className="container space-y-6   dark:bg-transparent py-6"
     >
+     <ThemeToggle/>
       {/* <h2 className="text-xl md:text-2xl font-medium">All Courses</h2> */}
       {/* header */}
       <div className="flex items-baseline justify-between  border-gray-200 border-b pb-6 flex-col gap-4 lg:flex-row">
