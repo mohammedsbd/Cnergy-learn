@@ -44,6 +44,7 @@ const HomePage = async () => {
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             “You don’t understand anything until you learn it more than one
             way.”
+            
           </p>
           <div className="flex items-center gap-3 flex-wrap justify-center">
             <Link href="" className={cn(buttonVariants({ size: "lg" }))}>
@@ -105,7 +106,7 @@ const HomePage = async () => {
             href={"/courses"}
             className=" text-sm font-medium hover:opacity-80 flex items-center gap-1">
             Browse All <ArrowRightIcon className="h-4 w-4" />
-          </Link>
+          </Link> 
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
           {courses.map((course) => {
