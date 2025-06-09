@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// import CourseOverview from "./CourseOverview";
-// import CourseCurriculam from "./CourseCurriculam";
-// import CourseInstructor from "./CourseInstructor";
+import CourseOverview from "./CourseOverview";
+import CourseCurriculam from "./CourseCurriculam";
+import CourseInstructor from "./CourseInstructor";
 
 const CourseDetails = () => {
   return (
@@ -43,17 +43,16 @@ const CourseDetails = () => {
 
             <TabsContent value="overview">
               {/* each tab content can be independent component */}
-              {/* <CourseOverview /> */}
+              <CourseOverview />
             </TabsContent>
 
             <TabsContent value="curriculum">
               {/* each tab content can be independent component */}
-{/* 
-              <CourseCurriculam /> */}
+              <CourseCurriculam />
             </TabsContent>
             <TabsContent value="instructor">
               {/* each tab content can be independent component */}
-              {/* <CourseInstructor /> */}
+              <CourseInstructor />
             </TabsContent>
           </Tabs>
         </div>
