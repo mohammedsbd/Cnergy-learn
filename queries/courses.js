@@ -7,8 +7,8 @@ import {
   replaceMongoIdInArray,
   replaceMongoIdInObject,
 } from "@/lib/convertData";
-// import { getEnrollmentsForCourse } from "./enrollments";
-// import { getTestimonialsForCourse } from "./testimonials";
+import { getEnrollmentsForCourse } from "./enrollments";
+import { getTestimonialsForCourse } from "./testimonials";
 
 export async function getCourseList() {
   const courses = await Course.find({})
