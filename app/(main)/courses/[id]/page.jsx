@@ -5,6 +5,7 @@ import Testimonials from "./_components/Testimonials";
 import RelatedCourses from "./_components/RelatedCourses";
 import { getCourseDetails } from "@/queries/courses";
 import { replaceMongoIdInArray } from "@/lib/convertData";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const SingleCoursePage = async ({ params: { id } }) => {
   const course = await getCourseDetails(id);
@@ -12,6 +13,7 @@ const SingleCoursePage = async ({ params: { id } }) => {
 
   return (
     <>
+    <ThemeToggle/>
       <CourseDetailsIntro
         title={course?.title}
         subtitle={course?.subtitle}
