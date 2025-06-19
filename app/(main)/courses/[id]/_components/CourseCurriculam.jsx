@@ -1,34 +1,36 @@
 import React from "react";
-import { BookCheck, Clock10, Radio } from "lucide-react";
+import { BookCheck } from "lucide-react";
+import { Clock10 } from "lucide-react";
+import { Radio } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
 import CourseModuleList from "./module/CourseModuleList";
 
 const CourseCurriculam = ({ course }) => {
-  const modules = Array.isArray(course?.modules) ? course.modules : [];
-  const totalDuration = modules.reduce(
-    (acc, obj) => acc + (obj?.duration || 0),
-    0
-  );
-  const hours = totalDuration > 0 ? (totalDuration / 60).toFixed(1) : 0;
+  // console.log(course)
+
+  const totalDuration = course?.modules.reduce(function (acc, obj) {
+    return acc + obj.duration;
+  }, 0);
 
   return (
     <>
       <div className="flex gap-x-5 items-center justify-center flex-wrap mt-4 mb-6 text-gray-600 text-sm">
         <span className="flex items-center gap-1.5">
           <BookCheck className="w-4 h-4" />
-          {modules.length} Chapter{modules.length !== 1 ? "s" : ""}
+          {course?.modules?.length} Chapters
         </span>
         <span className="flex items-center gap-1.5">
           <Clock10 className="w-4 h-4" />
-          {hours}+ Hours
+          {(totalDuration / 60).toPrecision(2)}+ Hours
         </span>
         <span className="flex items-center gap-1.5">
-          <Radio className="w-4 h-4" />4 Live Classes
+          <Radio className="w-4 h-4" />4 Live Class
         </span>
       </div>
 
@@ -38,18 +40,10 @@ const CourseCurriculam = ({ course }) => {
         collapsible="true"
         className="w-full"
       >
-        {modules.length > 0 ? (
-          modules.map((module, index) => (
-            <CourseModuleList
-              key={module?.id || `module-${index}`}
-              module={module}
-            />
-          ))
-        ) : (
-          <div className="p-4 text-center text-gray-500">
-            No curriculum available yet
-          </div>
-        )}
+        {course?.modules &&
+          course.modules.map((module, index) => (
+            <CourseModuleList key={module.id || index} module={module} />
+          ))}
       </Accordion>
     </>
   );
