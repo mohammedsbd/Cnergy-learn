@@ -67,6 +67,7 @@ const HomePage = async () => {
 
   return (
     <>
+      {/* <ThemeToggle/> */}
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32 grainy">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center relative isolate">
           <div
@@ -85,14 +86,17 @@ const HomePage = async () => {
             Hey, Welcome
           </span>
           <h1 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-          Learn By Doing with <br/> Easy Learning
+            Learn By Doing with <br /> Cnergy Learn
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             “You don’t understand anything until you learn it more than one
             way.”
           </p>
           <div className="flex items-center gap-3 flex-wrap justify-center">
-            <Link href="/courses" className={cn(buttonVariants({ size: "lg" }))}>
+            <Link
+              href="/courses"
+              className={cn(buttonVariants({ size: "lg" }))}
+            >
               Explore Now
             </Link>
             <Link
@@ -104,11 +108,7 @@ const HomePage = async () => {
           </div>
         </div>
       </section>
-
-     
-     <Element/>
-
-      
+      <Element />
       {/* Categories Section */}
       <section
         id="categories"
@@ -134,7 +134,7 @@ const HomePage = async () => {
               >
                 <div className="flex  flex-col gap-4 items-center justify-between rounded-md p-6">
                   <Image
-                  src={`/assets/images/categories/${category.thumbnail}`}
+                    src={`/assets/images/categories/${category.thumbnail}`}
                     alt={category.title}
                     width={100}
                     height={100}
@@ -146,7 +146,6 @@ const HomePage = async () => {
           })}
         </div>
       </section>
-
       {/* Courses */}
       <section id="courses" className="container space-y-6   md:py-12 lg:py-24">
         <div className="flex items-center justify-between">
@@ -160,16 +159,11 @@ const HomePage = async () => {
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
           {courses.map((course) => {
-            return (
-              <CourseCard key={course.id} course={course} />
-            );
+            return <CourseCard key={course.id} course={course} />;
           })}
         </div>
       </section>
-
-      <Support/>
-    
-       
+      <Support />
     </>
   );
 };
