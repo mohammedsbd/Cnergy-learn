@@ -67,10 +67,6 @@ const HomePage = async () => {
 
   return (
     <>
-<<<<<<< HEAD
-=======
-      {/* <ThemeToggle/> */}
->>>>>>> main
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32 grainy">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center relative isolate">
           <div
@@ -96,14 +92,7 @@ const HomePage = async () => {
             way.”
           </p>
           <div className="flex items-center gap-3 flex-wrap justify-center">
-<<<<<<< HEAD
             <Link href="/courses" className={cn(buttonVariants({ size: "lg" }))}>
-=======
-            <Link
-              href="/courses"
-              className={cn(buttonVariants({ size: "lg" }))}
-            >
->>>>>>> main
               Explore Now
             </Link>
             <Link
@@ -115,15 +104,11 @@ const HomePage = async () => {
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
      
      <Element/>
 
       
-=======
-      <Element />
->>>>>>> main
       {/* Categories Section */}
       <section
         id="categories"
@@ -161,10 +146,7 @@ const HomePage = async () => {
           })}
         </div>
       </section>
-<<<<<<< HEAD
 
-=======
->>>>>>> main
       {/* Courses */}
       <section id="courses" className="container space-y-6   md:py-12 lg:py-24">
         <div className="flex items-center justify-between">
@@ -184,14 +166,10 @@ const HomePage = async () => {
           })}
         </div>
       </section>
-<<<<<<< HEAD
 
       <Support/>
     
        
-=======
-      <Support />
->>>>>>> main
     </>
   );
 };
