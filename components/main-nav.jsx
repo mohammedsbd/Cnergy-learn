@@ -10,6 +10,8 @@ import { Menu } from 'lucide-react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'; 
 import MobileNav from './mobile-nav';
+import ThemeToggle from "@/components/ThemeToggle";
+
 
 const MainNav = ({items,children}) => {
 
@@ -18,6 +20,7 @@ const MainNav = ({items,children}) => {
 
 
     return (
+<<<<<<< HEAD
 <>
 <div className='flex gap-6 lg:gap-10'>
     <Link href="/">
@@ -40,6 +43,29 @@ const MainNav = ({items,children}) => {
             </nav> 
         ) : null
     }
+=======
+      <>
+        <ThemeToggle />
+        <div className="flex gap-6 lg:gap-10">
+          <Link href="/">
+            <Logo />
+          </Link>
+          {items?.length ? (
+            <nav className="hidden gap-6 lg:flex">
+              {items?.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.disable ? "#" : item.href}
+                  className={cn(
+                    "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm "
+                  )}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </nav>
+          ) : null}
+>>>>>>> main
 
     {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
@@ -67,6 +93,47 @@ const MainNav = ({items,children}) => {
 </DropdownMenu> 
         </div>
 
+<<<<<<< HEAD
+=======
+        <nav className="flex items-center gap-3">
+          <div className="items-center gap-3 hidden lg:flex">
+            <Link
+              href="/login"
+              className={cn(
+                buttonVariants({ size: "sm", variant: "default" }),
+                "px-4 text-white hover:opacity-90"
+              )}
+              style={{ backgroundColor: "#E65BC1" }}
+            >
+              Login
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  Register
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 mt-4">
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="/register/student"
+                    className="cursor-pointer w-full"
+                  >
+                    Student
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="/register/instructor"
+                    className="cursor-pointer w-full"
+                  >
+                    Instructor
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+>>>>>>> main
 
     <DropdownMenu>
         <DropdownMenuTrigger asChild>
