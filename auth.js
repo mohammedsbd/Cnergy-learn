@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { User } from "./model/user-model";
 import bcrypt from 'bcryptjs';
-import { authconfig } from "./middleware";
+import { authConfig } from "./auth.config";
  
 export const {
     handlers: {GET, POST},
@@ -10,7 +10,7 @@ export const {
     signIn,
     signOut,
 } = NextAuth({
-    ...authconfig,
+     ...authConfig,
     providers: [
         CredentialsProvider({
             async authorize(credentials) {
