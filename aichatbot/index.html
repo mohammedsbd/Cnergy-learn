@@ -4,12 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cnergy Learn AI Chatbot</title>
+
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <style>
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
+    #webchat .bpFab {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <h1>Welcome to the Cnergy Learn AI Chatbot</h1>
 
-  <!-- Botpress Webchat Scripts -->
-  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-  <script src="./chatbot.js"></script>
+  <div id="webchat" style="width: 500px; height: 500px;"></div>
+
+  <script>
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
+    window.botpress.init({
+      botId: "c94000dc-ce61-437d-ba04-ec53774c4108",
+      configuration: {
+        version: "v1",
+        botName: "Luma",
+        botAvatar: "https://files.bpcontent.cloud/2025/07/01/12/20250701121214-12DIGWDN.png",
+        website: {},
+        email: {},
+        phone: {},
+        termsOfService: {},
+        privacyPolicy: {},
+        color: "#a469ad",
+        variant: "solid",
+        headerVariant: "solid",
+        themeMode: "light",
+        fontFamily: "ibm",
+        radius: 4,
+        feedbackEnabled: false,
+        footer: "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+        storageLocation: "localStorage"
+      },
+      clientId: "77907cf9-3686-4c7e-835a-e5cd6ccd4c27",
+      selector: "#webchat"
+    });
+  </script>
 </body>
 </html>
