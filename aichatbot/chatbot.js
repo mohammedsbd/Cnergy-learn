@@ -5,5 +5,7 @@ window.botpressWebChat.init({
   messagingUrl: "https://messaging.botpress.cloud",
   lazySocket: true,
   enableConversationDeletion: true,
-  showPoweredBy: false
+  showPoweredBy: false,
+  botName: "Lumi",
+  botAvatarUrl: "./assets/lumi-icon.png"
 });
