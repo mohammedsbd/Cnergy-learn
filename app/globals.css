@@ -2,6 +2,14 @@
   @tailwind components;
   @tailwind utilities;
 
+/* styles/globals.css */
+/* styles/globals.css */
+/* styles/globals.css */
+/* styles/globals.css */
+/* Add this to your styles to ensure the toggle button doesn't cause overflow */
+/* Ensure no horizontal scroll and full-height layout */
+
+
   @layer base {
     :root {
       --background: 0 0% 100%;
