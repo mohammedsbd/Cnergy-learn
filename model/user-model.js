@@ -27,7 +27,8 @@ const userSchema = new Schema({
     },
     bio:{
         required: false,
-        type: String
+        type: String,
+        default: ""
     },
     socialMedia:{
         required: false,
@@ -36,11 +37,13 @@ const userSchema = new Schema({
   
     profilePicture:{
         required: false,
-        type: String
+        type: String,
+        default: "https://i.pravatar.cc"
     },
     designation:{
         required: false,
-        type: String
+        type: String,
+        default: ""
     } ,
 });
 export const User = mongoose.models.User ?? mongoose.model("User",userSchema);
