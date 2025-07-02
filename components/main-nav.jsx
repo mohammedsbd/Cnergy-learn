@@ -79,7 +79,7 @@ const MainNav = ({items,children}) => {
             )
         }
         
-    
+       
 
     {loginSession && (
         <DropdownMenu>

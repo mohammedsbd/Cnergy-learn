@@ -10,6 +10,6 @@ const RegisterPage = ({ params: {role} }) => {
             
         </div>
     );
-};
+}
 
 export default RegisterPage;
