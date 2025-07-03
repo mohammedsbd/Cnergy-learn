@@ -2,16 +2,24 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { User } from "./model/user-model";
 import bcrypt from 'bcryptjs';
+ Abigiya-branch
  
+
+import { authConfig } from "./auth.config";
+
 export const {
     handlers: {GET, POST},
     auth,
     signIn,
     signOut,
 } = NextAuth({
+ Abigiya-branch
     session: {
         strategy: 'jwt'
     },
+
+     ...authConfig,
+ main
     providers: [
         CredentialsProvider({
             async authorize(credentials) {
@@ -45,4 +53,4 @@ export const {
         })
 
     ]
-})
+ Abigiya-branch
