@@ -1,3 +1,4 @@
+ "use client";
 import MainNav from "@/components/main-nav";
 import SiteFooter from "@/components/site-footer";
 import Chatbot from "@/components/chatbot"; // <-- Import Chatbot
