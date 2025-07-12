@@ -12,10 +12,12 @@ const Chatbot = () => {
         selector: "#webchat",
         configuration: {
           version: "v1",
-          botName: "Luma",
+          botName: "Cnergy",
           botAvatar:
-            "https://files.bpcontent.cloud/2025/07/01/12/20250701121214-12DIGWDN.png",
-          color: "#e6b7a9",
+            "https://files.bpcontent.cloud/2025/07/09/09/20250709095022-P3F29LN7.png",
+          fabImage:
+            "https://files.bpcontent.cloud/2025/07/09/09/20250709095022-P3F29LN7.png",
+          color: "#ab4aba",
           variant: "solid",
           headerVariant: "solid",
           themeMode: "light",
