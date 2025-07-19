@@ -19,4 +19,17 @@ const EnrollCourse = ({ asLink }) => {
              variant="ghost"
              className="text-xs text-sky-700 h-7 gap-1"
            ></Button>
-           
+             ): (
+            <Button type="submit" className={cn(buttonVariants({ size: "lg" }))}>
+            Enroll Now
+          </Button>
+        )} 
+
+    </form>
+
+    
+ </>
+    );
+};
+
+export default EnrollCourse;
