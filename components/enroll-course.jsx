@@ -10,3 +10,13 @@ const EnrollCourse = ({ asLink }) => {
         const { url } = await createCheckoutSession(data);
         window.location.assign(url);
     }
+       return (
+ <>
+    <form action={formAction} >
+        {asLink ? (
+             <Button
+             type="submit"
+             variant="ghost"
+             className="text-xs text-sky-700 h-7 gap-1"
+           ></Button>
+           
