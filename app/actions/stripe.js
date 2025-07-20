@@ -41,3 +41,16 @@ export async function createCheckoutSession(data){
 }
 
 /// End Method 
+
+export async function createPaymentIntent(data){
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: formatAmountForStripe(19,
+            CURRENCY
+        ),
+        automatic_payment_methods: {enabled:true},
+        currency: CURRENCY
+    });
+    return { client_secret: paymentIntent.client_secret };
+
+}
+/// End Method 
