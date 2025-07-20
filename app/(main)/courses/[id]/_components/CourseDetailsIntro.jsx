@@ -24,7 +24,7 @@ const CourseDetailsIntro = ({course}) => {
  
                 <div className="mt-6 flex items-center justify-center flex-wrap gap-3">
 
-                  <EnrollCourse/>
+                  <EnrollCourse courseId={course?.id}/>
                   
                   <Link
                     href=""
@@ -69,7 +69,3 @@ const CourseDetailsIntro = ({course}) => {
 };
 
 export default CourseDetailsIntro;
-
-//Created the CourseDetailsIntro component to display the course subtitle, 
-// title with gradient effect, an enroll button, intro and price links, 
-// and the course thumbnail image.
