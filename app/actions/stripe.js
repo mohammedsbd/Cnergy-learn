@@ -24,3 +24,20 @@ export async function createCheckoutSession(data){
                 },
             },
         ],
+
+           ...(ui_mode === "hosted" && {
+            success_url: `${origin}/enroll-success?session_id={CHECKOUT_SESSION_ID}&courseId=65656`,
+            cancel_url: `${origin}/courses`
+        }),
+
+        ui_mode
+    });
+
+    return {
+        client_secret: checkoutSession.client_secret,
+        url: checkoutSession.url,
+    };
+
+}
+
+/// End Method 
