@@ -38,3 +38,16 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
   /// Cutomer Info 
   const customerName = `${loggedInUser?.firstName} ${loggedInUser?.lastName
   }`;
+  const customerEmail = loggedInUser?.email;
+  const productName = course?.title;
+  //console.log(customerName,customerEmail,productName);
+
+  if (paymentStatus === "succeeded") {
+    /// Update data to enrollment table 
+    const enrolled = await enrollForCourse(
+      course?.id,
+      loggedInUser?.id,
+      "stripe"
+    );
+    console.log(enrolled);
+
