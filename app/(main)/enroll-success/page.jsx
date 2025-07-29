@@ -51,3 +51,11 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
     );
     console.log(enrolled);
 
+    // Send emails to the instructor and student who paid 
+
+    const instructorName = `${course?.instructor?.firstName} ${course?.instructor?.lastName}`;
+    const instructorEmail = course?.instructor?.email;
+    //console.log(instructorName,instructorEmail);
+
+
+
