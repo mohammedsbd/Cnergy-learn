@@ -72,3 +72,24 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
       }
     ];
 
+      const emailSendResponse = await sendEmails(emailsToSend);
+     // console.log(emailSendResponse);
+    
+  }
+
+
+  return (
+    <div className="h-full w-full flex-1 flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center gap-6 max-w-[600px] text-center">
+
+      {
+        paymentStatus === "succeeded" && (
+          <>
+          <CircleCheck className="w-32 h-32 bg-green-500 rounded-full p-0 text-white" />
+        <h1 className="text-xl md:text-2xl lg:text-3xl">
+          Congratulations! <strong>{customerName}</strong> Your Enrollment was Successful for <strong>{productName}</strong>
+        </h1>
+          </>
+        )
+      } 
+       
