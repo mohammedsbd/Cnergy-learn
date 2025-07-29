@@ -26,4 +26,15 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
 
   const checkoutSession = await stripe.checkout.sessions.retrieve(
     session_id,
-   
+    {
+      expand: ["line_items" , "payment_intent"],
+    }
+  );
+
+  // console.log(checkoutSession);
+  const paymentIntent = checkoutSession?.payment_intent;
+  const paymentStatus = paymentIntent?.status;
+
+  /// Cutomer Info 
+  const customerName = `${loggedInUser?.firstName} ${loggedInUser?.lastName
+  }`;
