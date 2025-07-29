@@ -9,4 +9,17 @@ const Success = () => {
         <CircleCheck className="w-32 h-32 bg-green-500 rounded-full p-0 text-white" />
         <h1 className="text-xl md:text-2xl lg:text-3xl">
           Congratulations! You Enrollment was Successful
-        
+        </h1>
+        <div className="flex items-center gap-3">
+          <Button asChild size="sm">
+            <Link href="/courses">Browse Courses</Link>
+          </Button>
+          <Button asChild variant="outline" size="sm">
+            <Link href="#">Play Course</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Success;
