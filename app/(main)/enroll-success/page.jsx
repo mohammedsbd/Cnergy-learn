@@ -17,3 +17,13 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
 
   const userSession = await auth();
 
+  if (!userSession?.user?.email) {
+    redirect("/login");
+  } 
+
+  const course = await getCourseDetails(courseId);
+  const loggedInUser = await getUserByEmail(userSession?.user?.email);
+
+  const checkoutSession = await stripe.checkout.sessions.retrieve(
+    session_id,
+   
