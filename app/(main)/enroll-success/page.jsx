@@ -59,9 +59,3 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
 
 
 
-    const emailsToSend = [
-      {
-        to: instructorEmail,
-        subject: `New Enrollment For ${productName}`,
-        message: `Congratulations, ${instructorName}. A new student, ${customerName} has enrolled to your course ${productName} just now. `
-      },
