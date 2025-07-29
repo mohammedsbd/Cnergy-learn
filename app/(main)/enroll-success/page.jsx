@@ -92,4 +92,16 @@ const Success = async ({ searchParams : {session_id, courseId} }) => {
           </>
         )
       } 
-       
+        <div className="flex items-center gap-3">
+          <Button asChild size="sm">
+            <Link href="/courses">Browse Courses</Link>
+          </Button>
+          <Button asChild variant="outline" size="sm">
+            <Link href="#">Play Course</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Success;
