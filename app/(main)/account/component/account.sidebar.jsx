@@ -34,3 +34,18 @@ const AccountSidebar = async () => {
                 className="hidden"
                     
             />
+            <div>
+                <div className="relative size-28 mx-auto">
+                    <Image
+                        src={loggedInUser?.profilePicture}
+                        className="rounded-full shadow dark:shadow-gray-800 ring-4 ring-slate-50 dark:ring-slate-800"
+                        id="profile-banner"
+                        alt={`${loggedInUser?.firstName}`}
+                        width={112}
+                        height={112}
+                    />
+                    <label
+                        className="absolute inset-0 cursor-pointer"
+                        htmlFor="pro-img"
+                    />
+                </div>
