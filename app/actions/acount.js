@@ -23,3 +23,10 @@ export async function changePassword(email, oldPassword, newPassword) {
     if (!isMatch) {
         throw new Error("Please enter a valid current password");        
     }
+    const filter = {email: email};
+    const hashedPassword = await bcrypt.hash(newPassword, 5);
+
+    const dataToUpadate ={
+        password: hashedPassword
+    };
+
