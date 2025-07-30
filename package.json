@@ -39,6 +39,7 @@
     "react-day-picker": "^8.10.1",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-hook-form": "^7.53.2",
+    "resend": "^4.7.0",
     "sonner": "^1.7.0",
     "stripe": "^18.3.0",
     "tailwind-merge": "^2.5.4",
