@@ -26,3 +26,14 @@ const EnrolledCourseCard = async ({enrollment}) => {
     //console.log(quizzesTaken);
     
     // find how many quizzes answered correct 
+    const totalCorrect = quizzesTaken.map(quiz => {
+        const item = quiz.options
+        return item.filter(o => {
+            return o.isCorrect === true && o.isSelected === true
+        })
+    }).filter(elem => elem.length > 0).flat();
+    //console.log(totalCorrect);
+
+    const marksFromQuizzes = totalCorrect?.length * 5;
+    const otherMarks = report?.quizAssessment?.otherMarks;
+    const totalMarks = (marksFromQuizzes + otherMarks);
