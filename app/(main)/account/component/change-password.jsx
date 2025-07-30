@@ -38,3 +38,21 @@ const ChangePassword = ({email}) => {
 
 
 
+    return (
+        <div>
+<h5 className="text-lg font-semibold mb-4">
+    Change password :
+</h5>
+<form onSubmit={doPasswordChange}>
+    <div className="grid grid-cols-1 gap-5">
+        <div>
+            <Label className="mb-2 block">Old password :</Label>
+            <Input
+                type="password"
+                id="oldPassword"
+                name="oldPassword"
+                onChange={handleChange}
+                placeholder="Old password"
+                required=""
+            />
+        </div>
