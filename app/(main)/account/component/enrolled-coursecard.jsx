@@ -60,3 +60,12 @@ const EnrolledCourseCard = async ({enrollment}) => {
                     <span>{enrollment?.course?.modules?.length} Chapters</span>
                 </div>
             </div>
+            <div className="border-b pb-2 mb-2">
+                <div className="flex items-center justify-between">
+                    <span className="text-md md:text-sm font-medium text-slate-700">
+                        Total Modules: {enrollment?.course?.modules?.length}
+                    </span>
+                    <div className="text-md md:text-sm font-medium text-slate-700">
+                        Completed Modules <Badge variant="success">{totalCompletedModules}</Badge>
+                    </div>
+                </div>
