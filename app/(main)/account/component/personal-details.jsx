@@ -19,3 +19,12 @@ const PersonalDetails = ({userInfo}) => {
         "bio" : userInfo.bio, 
     });
 
+    const handleChange = (event) => {
+        const field = event.target.name;
+        const value = event.target.value;
+        setInfoState({
+            ...infoState, [field]: value
+        });
+    }
+    /// console.log(infoState);
+
