@@ -9,3 +9,11 @@ import Link from "next/link";
 import { changePassword } from '@/app/actions/account';
 import { toast } from 'sonner';
 
+const ChangePassword = ({email}) => {
+    //console.log(email);
+
+    const [passwordState, setPasswordState] = useState({
+        "oldPassword" : "",
+        "newPassword" : "", 
+    });
+
