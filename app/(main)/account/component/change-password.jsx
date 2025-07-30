@@ -78,3 +78,13 @@ const ChangePassword = ({email}) => {
             />
         </div>
     </div>
+    {/*end grid*/}
+    <Button className="mt-5" type="submit">
+        Save password
+    </Button>
+</form>
+</div>
+    );
+};
+
+export default ChangePassword;
