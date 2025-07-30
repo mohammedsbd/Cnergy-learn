@@ -30,3 +30,11 @@ export async function changePassword(email, oldPassword, newPassword) {
         password: hashedPassword
     };
 
+    try { 
+        await User.findOneAndUpdate(filter,dataToUpadate);
+        revalidatePath('/account');
+    } catch (error) {
+        throw new Error(error);
+    } 
+
+}
