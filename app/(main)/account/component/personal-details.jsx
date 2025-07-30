@@ -9,3 +9,13 @@ import Link from "next/link";
 import { updateUserInfo } from '@/app/actions/account';
 import { toast } from 'sonner';
 
+const PersonalDetails = ({userInfo}) => {
+    // console.log(userInfo);
+    const [infoState, setInfoState] = useState({
+        "firstName" : userInfo.firstName,
+        "lastName" : userInfo.lastName,
+        "email" : userInfo.email,
+        "designation" : userInfo.designation,
+        "bio" : userInfo.bio, 
+    });
+
