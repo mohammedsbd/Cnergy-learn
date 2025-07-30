@@ -8,3 +8,13 @@ import { getReport } from '@/queries/reports';
 const EnrolledCourseCard = async ({enrollment}) => {
    // console.log(enrollment);
     const courseCategory = await getCategoryDetails(enrollment?.course?.category?._id);
+
+    const filter = {course: enrollment?.course?._id, student:enrollment?.student?._id }
+
+    const report = await getReport(filter);
+    //console.log(report);
+
+    /// Total Completed Modules 
+    const totalCompletedModules = report?.totalCompletedModeules?.length;
+    
+    // Get all Quizzes and Assignments 
