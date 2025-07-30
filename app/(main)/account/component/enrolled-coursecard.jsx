@@ -77,3 +77,20 @@ const EnrolledCourseCard = async ({enrollment}) => {
                         Quiz taken <Badge variant="success">{quizzesTaken?.length}</Badge>
                     </div>
                 </div>
+                <div className="flex items-center justify-between mt-2">
+                    <span className="text-md md:text-sm font-medium text-slate-700">
+                        Mark from Quizzes
+                    </span>
+                    <span className="text-md md:text-sm font-medium text-slate-700">
+                        {marksFromQuizzes}
+                    </span>
+                </div>
+                <div className="flex items-center justify-between mt-2">
+                    <span className="text-md md:text-sm font-medium text-slate-700">
+                        Others
+                    </span>
+                    <span className="text-md md:text-sm font-medium text-slate-700">
+                        {otherMarks}
+                    </span>
+                </div>
+            </div>
