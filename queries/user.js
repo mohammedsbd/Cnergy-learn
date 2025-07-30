@@ -7,3 +7,11 @@ export async function getUserByEmail(email){
     return replaceMongoIdInObject(user);
 } 
 
+export async function validatePassword(email, password){
+    const user = await getUserByEmail(email);
+    const isMatch = await bcrypt.compare(
+        password,
+        user.password
+    );
+    return isMatch
+}
