@@ -23,3 +23,16 @@ export async function enrollForCourse(courseId, userId, paymentMethod){
     }
 }
 
+export async function getEnrollmentsForUser(userId){
+    try {
+        const enrollments = await Enrollment.find({ student: userId})
+        .populate({
+            path: "course",
+            model: Course,
+        }).lean();
+        return replaceMongoIdInArray(enrollments);
+    } catch (err) {
+        throw new Error(err);
+    }
+
+}
