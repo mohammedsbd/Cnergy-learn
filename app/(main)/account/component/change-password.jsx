@@ -56,3 +56,14 @@ const ChangePassword = ({email}) => {
                 required=""
             />
         </div>
+        <div>
+            <Label className="mb-2 block">New password :</Label>
+            <Input
+                type="password"
+                id="newPassword"
+                name="newPassword"
+                onChange={handleChange}
+                placeholder="New password"
+                required=""
+            />
+        </div>
