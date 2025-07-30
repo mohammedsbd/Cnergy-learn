@@ -49,3 +49,26 @@ const AccountSidebar = async () => {
                         htmlFor="pro-img"
                     />
                 </div>
+                <div className="mt-4">
+                    <h5 className="text-lg font-semibold">
+         {`${loggedInUser?.firstName} ${loggedInUser?.lastName}`}
+                    </h5>
+                    <p className="text-slate-400">
+                    {loggedInUser?.email}
+                    </p>
+                    <p className="text-slate-700 text-sm font-bold">
+                    Role: {loggedInUser?.role}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div className="border-t border-gray-100 dark:border-gray-700">
+            <Menu />
+        </div>
+    </div>
+</div>
+</div>
+    );
+};
+
+export default AccountSidebar;
