@@ -73,3 +73,16 @@ const PersonalDetails = ({userInfo}) => {
                     required
                 />
             </div>
+            <div>
+                <Label className="mb-2 block">
+                    Your Email : <span className="text-red-600">*</span>
+                </Label>
+                <Input
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                    value={infoState?.email}
+                    disabled
+                />
+            </div>
