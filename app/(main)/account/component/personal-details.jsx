@@ -111,3 +111,14 @@ const PersonalDetails = ({userInfo}) => {
                 />
             </div>
         </div>
+        {/*end row*/}
+        <Button className="mt-5" asChild>
+            <input type="submit" name="send" value="Save Changes" />
+        </Button>
+    </form>
+    {/*end form*/}
+</div>
+    );
+};
+
+export default PersonalDetails;
