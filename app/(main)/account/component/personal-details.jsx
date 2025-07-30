@@ -86,3 +86,15 @@ const PersonalDetails = ({userInfo}) => {
                     disabled
                 />
             </div>
+            <div>
+                <Label className="mb-2 block">Occupation :</Label>
+                <Input
+                    id="designation"
+                    name="designation"
+                    value={infoState?.designation}
+                    type="text"
+                    onChange={handleChange}
+                    placeholder="Occupation :"
+                />
+            </div>
+        </div>
