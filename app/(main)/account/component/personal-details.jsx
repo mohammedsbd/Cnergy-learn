@@ -98,3 +98,16 @@ const PersonalDetails = ({userInfo}) => {
                 />
             </div>
         </div>
+        {/*end grid*/}
+        <div className="grid grid-cols-1">
+            <div className="mt-5">
+                <Label className="mb-2 block">Description :</Label>
+                <Textarea
+                    id="bio"
+                    name="bio"
+                    value={infoState?.bio}
+                    onChange={handleChange}
+                    placeholder="Message :"
+                />
+            </div>
+        </div>
