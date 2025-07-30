@@ -6,3 +6,12 @@ export async function getCategories(){
     return replaceMongoIdInArray(categories);
 }
 
+export async function getCategoryDetails(categoryId){
+    try {
+        const category = await Category.findById(categoryId).lean();
+        return replaceMongoIdInObject(category);
+    } catch (error) {
+        throw new Error(error);
+    }
+
+}
