@@ -17,3 +17,14 @@ const ChangePassword = ({email}) => {
         "newPassword" : "", 
     });
 
+    const handleChange = (event) => {
+        const key = event.target.name;
+        const value = event.target.value;
+        setPasswordState({
+            ...passwordState, [key]: value
+        });
+    }
+
+    async function doPasswordChange(event) {
+        event.preventDefault();
+
