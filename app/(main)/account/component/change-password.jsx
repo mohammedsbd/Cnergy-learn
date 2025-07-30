@@ -67,3 +67,14 @@ const ChangePassword = ({email}) => {
                 required=""
             />
         </div>
+        <div>
+            <Label className="mb-2 block">
+                Re-type New password :
+            </Label>
+            <Input
+                type="password"
+                placeholder="Re-type New password"
+                required=""
+            />
+        </div>
+    </div>
