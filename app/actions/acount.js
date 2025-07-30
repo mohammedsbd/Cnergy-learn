@@ -16,3 +16,10 @@ export async function updateUserInfo(email,updatedData){
 
 }
 // End method 
+
+export async function changePassword(email, oldPassword, newPassword) {
+    const isMatch = await validatePassword(email,oldPassword);
+    
+    if (!isMatch) {
+        throw new Error("Please enter a valid current password");        
+    }
