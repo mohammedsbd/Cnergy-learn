@@ -40,3 +40,22 @@ const PersonalDetails = ({userInfo}) => {
 
 
 
+    return (
+<div className="p-6 rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900">
+    <h5 className="text-lg font-semibold mb-4">Personal Detail :</h5>
+    <form onSubmit={handleUpdate} >
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
+            <div>
+                <Label className="mb-2 block">
+                    First Name : <span className="text-red-600">*</span>
+                </Label>
+                <Input
+                    type="text"
+                    placeholder="First Name:"
+                    id="firstName"
+                    name="firstName"
+                    value={infoState?.firstName}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
