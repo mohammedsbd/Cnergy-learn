@@ -18,3 +18,11 @@ const EnrolledCourseCard = async ({enrollment}) => {
     const totalCompletedModules = report?.totalCompletedModeules?.length;
     
     // Get all Quizzes and Assignments 
+    const quizzes = report?.quizAssessment?.assessments;
+    const totalQuizzes = quizzes?.length;
+
+    // Find attempted quizzes 
+    const quizzesTaken = quizzes.filter(q => q.attempted);
+    //console.log(quizzesTaken);
+    
+    // find how many quizzes answered correct 
