@@ -28,3 +28,13 @@ const ChangePassword = ({email}) => {
     async function doPasswordChange(event) {
         event.preventDefault();
 
+        try {
+            await changePassword(email,passwordState?.oldPassword, passwordState?.newPassword);
+            toast.success("Password changed successfully")
+        } catch (error) {
+            toast.error(`Error: ${error.message}`);
+        }
+    }
+
+
+
