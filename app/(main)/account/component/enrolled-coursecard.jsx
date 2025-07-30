@@ -94,3 +94,17 @@ const EnrolledCourseCard = async ({enrollment}) => {
                     </span>
                 </div>
             </div>
+            <div className="flex items-center justify-between mb-4">
+                <span className="text-md md:text-sm font-medium text-slate-700">
+                    Total Marks
+                </span>
+                <span className="text-md md:text-sm font-medium text-slate-700">
+                    {totalMarks}
+                </span>
+            </div>
+        </div>
+    </div>
+    );
+};
+
+export default EnrolledCourseCard;
