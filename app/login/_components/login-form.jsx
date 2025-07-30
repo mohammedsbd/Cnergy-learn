@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { ceredntialLogin } from "@/app/actions";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export function LoginForm() {
 
@@ -32,6 +33,7 @@ export function LoginForm() {
           console.log(response.error)
           setError(response.error);
       } else {
+        toast.success("Login Successfuly!");
         router.push("/courses")
       }      
     } catch (e) {
@@ -87,11 +89,11 @@ export function LoginForm() {
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
           <Link href="/register/instructor" className="underline">
-          Instructor 
+          Instructor
           </Link>
           {" "} or {" "}
           <Link href="/register/student" className="underline">
-          Student 
+          Student
           </Link>
         </div>
         </form>
