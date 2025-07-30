@@ -59,3 +59,17 @@ const PersonalDetails = ({userInfo}) => {
                     required
                 />
             </div>
+            <div>
+                <Label className="mb-2 block">
+                    Last Name : <span className="text-red-600">*</span>
+                </Label>
+                <Input
+                    type="text"
+                    placeholder="Last Name:"
+                    id="lastName"
+                    name="lastName"
+                    value={infoState?.lastName}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
